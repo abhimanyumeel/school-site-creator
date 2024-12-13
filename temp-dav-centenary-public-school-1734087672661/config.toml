@@ -1,0 +1,9 @@
+
+baseURL = '/'
+languageCode = 'en-us'
+title = 'DAV Centenary Public School'
+theme = 'exampleTheme'
+
+[params]
+    description = "This is a test school website"
+    author = "Test Auhtor"

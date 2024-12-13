@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Site.Data.data.name }}</title>
+</head>
+<body>
+    <header>
+        <h1>{{ .Site.Data.data.name }}</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>About This Theme</h2>
+            <p>{{ .Site.Data.data.description }}</p>
+            <p>Created by: {{ .Site.Data.data.author }}</p>
+        </section>
+
+        <!-- List all posts if any -->
+        {{ if .Site.RegularPages }}
+        <section>
+            <h2>Posts</h2>
+            <ul>
+                {{ range .Site.RegularPages }}
+                <li>
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </li>
+                {{ end }}
+            </ul>
+        </section>
+        {{ end }}
+    </main>
+
+    <footer>
+        <p>&copy; {{ now.Format "2006" }} {{ .Site.Data.data.name }}. Created by {{ .Site.Data.data.author }}</p>
+    </footer>
+</body>
+</html>
